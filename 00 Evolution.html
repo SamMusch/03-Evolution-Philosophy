@@ -1,0 +1,804 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) { 
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) { 
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571429rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ''; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ''; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ''; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: '−'; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+/* meyer reset -- http://meyerweb.com/eric/tools/css/reset/ , v2.0 | 20110126 | License: none (public domain) */
+
+@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+/* pt-serif-regular - latin */
+/* pt-serif-italic - latin */
+/* pt-serif-700 - latin */
+/* pt-serif-700italic - latin */
+:root {
+	--active-file-bg-color: #dadada;
+	--active-file-bg-color: rgba(32, 43, 51, 0.63);
+	--active-file-text-color: white;
+	--bg-color: #f3f2ee;
+	--text-color: #1f0909;
+	--control-text-color: #444;
+	--rawblock-edit-panel-bd: #e5e5e5;
+
+	--select-text-bg-color: rgba(32, 43, 51, 0.63);
+  --select-text-font-color: white;
+}
+
+pre {
+	--select-text-bg-color: #36284e;
+	--select-text-font-color: #fff;
+}
+
+html {
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+}
+
+html, body {
+	background-color: #f3f2ee;
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+	color: #1f0909;
+	line-height: 1.5em;
+}
+
+/*#write {
+	overflow-x: auto;
+    max-width: initial;
+	padding-left: calc(50% - 17em);
+    padding-right: calc(50% - 17em);
+}
+
+@media (max-width: 36em) {
+ 	#write {
+ 		padding-left: 1em;
+    	padding-right: 1em;
+ 	}
+}*/
+
+#write {
+	max-width: 40em;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+			max-width: 914px;
+	}
+}
+
+ol li {
+	list-style-type: decimal;
+	list-style-position: outside;
+}
+ul li {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* styles */
+
+/* ====== */
+
+/* headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+}
+h1 {
+	font-size: 1.875em;
+	/*30 / 16*/
+	line-height: 1.6em;
+	/* 48 / 30*/
+	margin-top: 2em;
+}
+h2,
+h3 {
+	font-size: 1.3125em;
+	/*21 / 16*/
+	line-height: 1.15;
+	/*24 / 21*/
+	margin-top: 2.285714em;
+	/*48 / 21*/
+	margin-bottom: 1.15em;
+	/*24 / 21*/
+}
+h3 {
+	font-weight: normal;
+}
+h4 {
+	font-size: 1.125em;
+	/*18 / 16*/
+	margin-top: 2.67em;
+	/*48 / 18*/
+}
+h5,
+h6 {
+	font-size: 1em;
+	/*16*/
+}
+h1 {
+	border-bottom: 1px solid;
+	margin-bottom: 1.875em;
+	padding-bottom: 0.8125em;
+}
+/* links */
+
+a {
+	text-decoration: none;
+	color: #065588;
+}
+a:hover,
+a:active {
+	text-decoration: underline;
+}
+/* block spacing */
+
+p,
+blockquote,
+.md-fences {
+	margin-bottom: 1.5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 1.5em;
+}
+/* blockquote */
+
+blockquote {
+	font-style: italic;
+	border-left: 5px solid;
+	margin-left: 2em;
+	padding-left: 1em;
+}
+/* lists */
+
+ul,
+ol {
+	margin: 0 0 1.5em 1.5em;
+}
+/* tables */
+.md-meta,.md-before, .md-after {
+	color:#999;
+}
+
+table {
+	margin-bottom: 1.5em;
+	/*24 / 16*/
+	font-size: 1em;
+	/* width: 100%; */
+}
+thead th,
+tfoot th {
+	padding: .25em .25em .25em .4em;
+	text-transform: uppercase;
+}
+th {
+	text-align: left;
+}
+td {
+	vertical-align: top;
+	padding: .25em .25em .25em .4em;
+}
+
+code,
+.md-fences {
+	background-color: #dadada;
+}
+
+code {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.md-fences {
+	margin-left: 2em;
+	margin-bottom: 3em;
+	padding-left: 1ch;
+	padding-right: 1ch;
+}
+
+pre,
+code,
+tt {
+	font-size: .875em;
+	line-height: 1.714285em;
+}
+/* some fixes */
+
+h1 {
+	line-height: 1.3em;
+	font-weight: normal;
+	margin-bottom: 0.5em;
+}
+
+p + ul,
+p + ol{
+	margin-top: .5em;
+}
+
+h3 + ul,
+h4 + ul,
+h5 + ul,
+h6 + ul,
+h3 + ol,
+h4 + ol,
+h5 + ol,
+h6 + ol {
+	margin-top: .5em;
+}
+
+li > ul,
+li > ol {
+	margin-top: inherit;
+	margin-bottom: 0;
+}
+
+li ol>li {
+	list-style-type: lower-alpha;
+}
+
+li li ol>li{
+	list-style-type: lower-roman;
+}
+
+h2,
+h3 {
+	margin-bottom: .75em;
+}
+hr {
+	border-top: none;
+	border-right: none;
+	border-bottom: 1px solid;
+	border-left: none;
+}
+h1 {
+	border-color: #c5c5c5;
+}
+blockquote {
+	border-color: #bababa;
+	color: #656565;
+}
+
+blockquote ul,
+blockquote ol {
+	margin-left:0;
+}
+
+.ty-table-edit {
+	background-color: transparent;
+}
+thead {
+	background-color: #dadada;
+}
+tr:nth-child(even) {
+	background: #e8e7e7;
+}
+hr {
+	border-color: #c5c5c5;
+}
+.task-list{
+	padding-left: 1rem;
+}
+
+.md-task-list-item {
+	padding-left: 1.5rem;
+	list-style-type: none;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.25rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #F3F2EE;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+
+#write pre.md-meta-block {
+	min-height: 1.875rem;
+	color: #555;
+	border: 0px;
+	background: transparent;
+	margin-top: -4px;
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
+.md-image>.md-meta {
+	color: #9B5146;
+}
+
+.md-image>.md-meta{
+	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', serif;
+}
+
+
+#write>h3.md-focus:before{
+	left: -1.5rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h4.md-focus:before{
+	left: -1.5rem;
+	top: .25rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h5.md-focus:before{
+	left: -1.5rem;
+	top: .0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h6.md-focus:before{
+	left: -1.5rem;
+	top: 0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+.md-toc-content:empty:before{
+	color: #065588;
+}
+.md-toc-item {
+	color: #065588;
+}
+#write div.md-toc-tooltip {
+	background-color: #f3f2ee;
+}
+
+#typora-sidebar {
+	background-color: #f3f2ee;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+  	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+}
+
+.pin-outline #typora-sidebar {
+	background: inherit;
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+.pin-outline #typora-sidebar:hover .outline-title-wrapper {
+	border-left:1px dashed;
+}
+
+.outline-item:hover {
+  background-color: #dadada;
+  border-left: 28px solid #dadada;
+  border-right: 18px solid #dadada;
+}
+
+.typora-node .outline-item:hover {
+  	border-right: 28px solid #dadada;
+}
+
+.outline-expander:before {
+  content: "\f0da";
+  font-family: FontAwesome;
+  font-size:14px;
+  top: 1px;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  content: "\f0d7";
+}
+
+.modal-content {
+	background-color: #f3f2ee;
+}
+
+.auto-suggest-container ul li {
+	list-style-type: none;
+}
+
+/** UI for electron */
+
+.megamenu-menu,
+#top-titlebar, #top-titlebar *,
+.megamenu-content {
+	background: #f3f2ee;
+	color: #1f0909;
+}
+
+.megamenu-menu-header {
+	border-bottom: 1px dashed #202B33;
+}
+
+.megamenu-menu {
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+header, .context-menu, .megamenu-content, footer {
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+    color: #1f0909;
+}
+
+#megamenu-back-btn {
+	color: #1f0909;
+	border-color: #1f0909;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title:before {
+	color: #1f0909;
+}
+
+.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active {
+	color: inherit;
+	background-color: #e8e7df;
+}
+
+.long-btn:hover {
+	background-color: #e8e7df;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+	background-color: #D2D1D1;
+}
+
+.btn-default {
+	background-color: transparent;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+.ty-show-word-count #footer-word-count {
+	background: #c7c5c5;
+}
+
+#typora-quick-open {
+    background-color: inherit;
+}
+
+.md-diagram-panel {
+	margin-top: 8px;
+}
+
+.file-list-item-file-name {
+	font-weight: initial;
+}
+
+.file-list-item-summary {
+	opacity: 1;
+}
+
+.file-list-item {
+	color: #777;
+}
+
+.file-list-item.active {
+	background-color: inherit;
+	color: black;
+}
+
+.ty-side-sort-btn.active {
+	background-color: inherit;
+}
+
+.file-list-item.active .file-list-item-file-name  {
+	font-weight: bold;
+}
+
+.file-list-item{
+    opacity:1 !important;
+}
+
+.file-library-node.active>.file-node-background{
+	background-color: rgba(32, 43, 51, 0.63);
+	background-color: var(--active-file-bg-color);
+}
+
+.file-tree-node.active>.file-node-content{
+	color: white;
+	color: var(--active-file-text-color);
+}
+
+.md-task-list-item>input {
+	margin-left: -1.7em;
+	margin-top: calc(1rem - 12px);
+}
+
+input {
+	border: 1px solid #aaa;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header:hover, 
+.megamenu-menu-header:focus {
+	color: inherit;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+	opacity: 1;
+}
+
+/* https://github.com/typora/typora-issues/issues/2046 */
+.os-windows-7 strong,
+.os-windows-7 strong  {
+	font-weight: 760;
+}
+
+.ty-preferences .btn-default {
+	background: transparent;
+}
+
+.ty-preferences .window-header {
+	border-bottom: 1px dashed #202B33;
+	box-shadow: none;
+}
+
+#sidebar-loading-template, #sidebar-loading-template.file-list-item {
+	color: #777;
+}
+
+.searchpanel-search-option-btn.active {
+	background: #777;
+	color: white;
+}
+
+.export-detail, .light .export-detail, 
+.light .export-item.active, 
+.light .export-items-list-control {
+	background: #e0e0e0;
+	border-radius: 2px;
+	font-weight: 700;
+	color: inherit
+}
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>Timeline</title>
+</head>
+<body class='typora-export typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#all-eras">All Eras</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#cenozoic-era">Cenozoic Era</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#pre-history">Pre-History</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#homo">Homo</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#natural-timeline">Natural Timeline</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#precambrian-eon">Precambrian EON</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#phanerozic-eon">Phanerozic EON</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1-paleozoic-era">1. Paleozoic ERA</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2-mesozoic-era-reptiles">2. Mesozoic ERA (Reptiles)</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3-cenozoic-era-mammals">3. Cenozoic ERA (Mammals)</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#homo-sapiens">Homo Sapiens</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ancient-history">Ancient History</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#5400-bc">5400 BC</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2213-bc-greek">2213 BC greek</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1200-bc">1200 BC</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#231-bc">231 BC</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1000---100-bc-israel">1000 - 100 BC Israel</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#4-bc-to-451">4 BC to 451</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#united-states">United States</a></div><ul class="outline-children"></ul></li></div></div><div id='write'  class=''><p><img src="https://cdn.britannica.com/67/73167-050-B9A74092/chart.jpg" referrerpolicy="no-referrer"></p><p>&nbsp;</p><h2 id='all-eras'><span>All Eras</span></h2><figure><table><thead><tr><th><span>EON</span></th><th><span>ERA</span></th><th><span>PERIOD</span></th><th><span>Mya</span></th><th><span>Geo</span></th><th><span>life</span></th></tr></thead><tbody><tr><td><span>Pre-Cambrian</span></td><td><span>Archean</span></td><td>&nbsp;</td><td><span>4570</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td><span>Proterozoic</span></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td><span>Phanerozoic</span></td><td><span>Paleozoic</span></td><td><span>Cambrian</span></td><td><span>542</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Ordovician</span></td><td><span>490</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Silurian</span></td><td><span>443</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Devonian</span></td><td><span>416</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Carboniferous</span></td><td><span>359</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Permian</span></td><td><span>299</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td><span>Mesozoic</span></td><td><span>Triassic</span></td><td><span>250</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Jurassic</span></td><td><span>200</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Cretaceous</span></td><td><span>145</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td><span>Cenozoic</span></td><td><span>Paleogene</span></td><td><span>65</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Neogene</span></td><td><span>23</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Quaternary</span></td><td><span>3</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure><p>&nbsp;</p><h2 id='cenozoic-era'><span>Cenozoic Era</span></h2><p><span>Time where continents are forming into modern</span></p><figure><table><thead><tr><th><span>period</span></th><th><span>epoch</span></th><th><span>age</span></th><th><span>Mya</span></th></tr></thead><tbody><tr><td><span>Paleogene</span></td><td><span>Paleocene</span></td><td><span>Danian</span></td><td><span>66</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Selandian</span></td><td><span>62</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Thanetian</span></td><td><span>59</span></td></tr><tr><td>&nbsp;</td><td><span>Eocene</span></td><td><span>Ypresian</span></td><td><span>56</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Lutetian</span></td><td><span>48</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Bartonian</span></td><td><span>41</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Priabonian</span></td><td><span>38</span></td></tr><tr><td>&nbsp;</td><td><span>Oligocene</span></td><td><span>Repulian</span></td><td><span>34</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Chattian</span></td><td><span>28</span></td></tr><tr><td>&nbsp;</td><td><span>Miocene</span></td><td><span>Aquitanian</span></td><td><span>23</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Burdigalian</span></td><td><span>20</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Langhian</span></td><td><span>16</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Serravallian</span></td><td><span>14</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Tortonian</span></td><td><span>12</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Messinian</span></td><td><span>7</span></td></tr><tr><td>&nbsp;</td><td><span>Pliocene</span></td><td><span>Zanclean</span></td><td><span>5</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Piacenzian</span></td><td><span>3.6</span></td></tr><tr><td>&nbsp;</td><td><span>Pleistocene</span></td><td><span>Gelasian</span></td><td><span>2.6</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Calabrian</span></td><td><span>1.8</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Middle</span></td><td><span>.78</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td><span>Upper</span></td><td><span>.12</span></td></tr><tr><td>&nbsp;</td><td><span>Holocene</span></td><td><span>(after last ice age)</span></td><td><span>.01</span></td></tr></tbody></table></figure><p>&nbsp;</p><h2 id='pre-history'><span>Pre-History</span></h2><p><a href='https://www.oxfordreference.com/view/10.1093/acref/9780191735349.timeline.0001'><span>Oxford</span></a></p><figure><table><thead><tr><th><span>event</span></th><th><span>ya</span></th><th><span>Unit</span></th></tr></thead><tbody><tr><td><span>Various species walk on 2 feet</span></td><td><span>6</span></td><td><span>M</span></td></tr><tr><td><span>Hominids in south / east Africa</span></td><td><span>4.5</span></td><td>&nbsp;</td></tr><tr><td><span>Ardipithecus (</span><strong><span>Ardi</span></strong><span> - Ethiopia)</span></td><td><span>4.4</span></td><td>&nbsp;</td></tr><tr><td><span>Australopithecus Afarensis (Tanzania)</span></td><td><span>3.6</span></td><td>&nbsp;</td></tr><tr><td><span>Australopithecus Afarensis (</span><strong><span>Lucy</span></strong><span> - Ethiopia)</span></td><td><span>3.2</span></td><td>&nbsp;</td></tr><tr><td><span>Neanderthals</span></td><td><span>2.6</span></td><td>&nbsp;</td></tr><tr><td><span>Australopithecus Boisei (East Africa)</span></td><td><span>2.6</span></td><td>&nbsp;</td></tr><tr><td><span>Homo Habilis (East Africa)</span></td><td><span>2.2</span></td><td>&nbsp;</td></tr><tr><td><span>Homo Erectus</span></td><td><span>1.8</span></td><td>&nbsp;</td></tr><tr><td><strong><span>Ice age</span></strong></td><td><strong><span>1.7</span></strong></td><td>&nbsp;</td></tr><tr><td><span>1st wave: Homo Erectus goes to Europe / Asia</span></td><td><span>1.7</span></td><td>&nbsp;</td></tr><tr><td><span>Homo Rhodesiensis</span></td><td><span>800</span></td><td><span>K</span></td></tr><tr><td><span>Humans in Britain</span></td><td><span>800</span></td><td>&nbsp;</td></tr><tr><td><span>Peking Man (south of Beijing)</span></td><td><span>500</span></td><td>&nbsp;</td></tr><tr><td><span>Humans in Germany (Saxony)</span></td><td><span>250</span></td><td>&nbsp;</td></tr><tr><td><span>Homo Sapiens</span></td><td><span>230</span></td><td>&nbsp;</td></tr><tr><td><span>2nd wave: Neanderthal</span></td><td><span>150</span></td><td>&nbsp;</td></tr><tr><td><span>Neanderthals &amp; modern humans coexist</span></td><td><span>120</span></td><td>&nbsp;</td></tr><tr><td><span>Modern humans in Israel (Skull and Qafzeh)</span></td><td><span>90</span></td><td>&nbsp;</td></tr><tr><td><span>First arrivals in Australia from southeast Asia</span></td><td><span>60</span></td><td>&nbsp;</td></tr><tr><td><span>Neanderthals decline</span></td><td><span>50</span></td><td>&nbsp;</td></tr><tr><td><span>Neanderthals vanish</span></td><td><span>35</span></td><td>&nbsp;</td></tr><tr><td><span>Rhinos, lions, mammoth cave paintings (France)</span></td><td><span>31</span></td><td>&nbsp;</td></tr><tr><td><strong><span>Ice Age (Holocene)</span></strong></td><td><span>30</span></td><td>&nbsp;</td></tr><tr><td><span>Beringia land bridge opens</span></td><td><span>30</span></td><td>&nbsp;</td></tr><tr><td><span>Carvings at Kostenky (Russia)</span></td><td><span>24</span></td><td>&nbsp;</td></tr><tr><td><span>Humans in La Brea (Los Angeles)</span></td><td><span>15</span></td><td>&nbsp;</td></tr><tr><td><span>Horse, deer, bison cave paintings (Spain)</span></td><td><span>15</span></td><td>&nbsp;</td></tr><tr><td><span>Extend down South America</span></td><td><span>15</span></td><td>&nbsp;</td></tr><tr><td><span>Dogs domesticated</span></td><td><span>12</span></td><td>&nbsp;</td></tr><tr><td><strong><span>Ice Age Ends</span></strong></td><td><span>8</span></td><td>&nbsp;</td></tr><tr><td><span>Cultivate crops and domesticate animals</span></td><td><span>8</span></td><td>&nbsp;</td></tr><tr><td><span>Jericho</span></td><td><span>8</span></td><td>&nbsp;</td></tr><tr><td><span>First arrivals in Japan from Siberia</span></td><td><span>8</span></td><td>&nbsp;</td></tr><tr><td><span>Beringia land bridge closes - drastic climate changes</span></td><td><span>8</span></td><td>&nbsp;</td></tr><tr><td><span>People in Newfoundland</span></td><td><span>8</span></td><td>&nbsp;</td></tr><tr><td><span>People in Tehuacan (Mexico)</span></td><td><span>5</span></td><td>&nbsp;</td></tr><tr><td><span>People in Papua New Guinea</span></td><td><span>4</span></td><td>&nbsp;</td></tr><tr><td><span>Sumer in Mesopotamia</span></td><td><span>3.1</span></td><td>&nbsp;</td></tr><tr><td><span>First Egyptian dynasty</span></td><td><span>3.1</span></td><td>&nbsp;</td></tr></tbody></table></figure><p>&nbsp;</p><h2 id='homo'><span>Homo</span></h2><figure><table><thead><tr><th><span>General</span></th><th><span>Specific</span></th><th>&nbsp;</th></tr></thead><tbody><tr><td><span>Kingdom:</span></td><td><a href='https://www.wikiwand.com/en/Animal'><span>Animalia</span></a></td><td><span>542 Mya</span></td></tr><tr><td><span>Phylum:</span></td><td><a href='https://www.wikiwand.com/en/Chordate'><span>Chordata</span></a></td><td>&nbsp;</td></tr><tr><td><span>Class:</span></td><td><a href='https://www.wikiwand.com/en/Mammal'><span>Mammalia</span></a></td><td><span>300 Mya: Milk, fur, neocortex</span></td></tr><tr><td><span>Order:</span></td><td><a href='https://www.wikiwand.com/en/Primate'><span>Primates</span></a></td><td><span>85 Mya</span></td></tr><tr><td><span>Suborder:</span></td><td><a href='https://www.wikiwand.com/en/Haplorhini'><span>Haplorhini</span></a></td><td><span>74 Mya</span></td></tr><tr><td><span>Infraorder:</span></td><td><a href='https://www.wikiwand.com/en/Simian'><span>Simiiformes</span></a></td><td><span>60 Mya, 40 Mya in New World</span></td></tr><tr><td><strong><span>Family:</span></strong></td><td><a href='https://www.wikiwand.com/en/Hominidae'><span>Hominidae</span></a></td><td><span>20 Mya</span></td></tr><tr><td><span>Subfamily:</span></td><td><a href='https://www.wikiwand.com/en/Homininae'><span>Homininae</span></a></td><td><span>14 Mya: Homo vs Gorillas (Interbred)</span></td></tr><tr><td><span>Tribe:</span></td><td><a href='https://www.wikiwand.com/en/Hominini'><span>Hominini</span></a></td><td><span>5 Mya: Homo vs Pan</span></td></tr><tr><td><span>Genus:</span></td><td><a href='https://www.wikiwand.com/en/Homo'><span>Homo</span></a></td><td><span>2 Mya:</span></td></tr></tbody></table></figure><p><strong><span>Family</span></strong><span> - </span><a href='https://www.youtube.com/watch?v=dUKV02uYEu0&amp;list=PLi6K9w_UbfFSxHPEDWcXxIxSA6gDR4OeZ&amp;index=3'><span>Eons Primate Family Tree</span></a></p><ul><li><span>Pongo (Bornean, Sumuatran, Tapanuli orangutan)</span></li><li><span>Gorilla (east and west)</span></li><li><span>Pan (Chimps and bonobo)</span></li><li><span>Homo</span></li></ul><p>&nbsp;</p><hr /><h2 id='natural-timeline'><span>Natural Timeline</span></h2><p><a href='https://www.wikiwand.com/en/List_of_time_periods'><span>Wikipedia Time Periods</span></a><span>  |  </span><a href='https://www.wikiwand.com/en/Timeline_of_natural_history'><span>Natural</span></a></p><p><a href='https://natmus.humboldt.edu/exhibits/life-through-time/visual-timeline'><span>Timeline with Eons, Eras, Periods</span></a></p><p><strong><span>Pangea</span></strong><span> existed between about 299 million years ago (at the start of the Permian Period of geological time) to about 180 million years ago (during the Jurassic Period). It remained in its fully assembled state for some 100 million years before it began to break up.</span></p><p><span>Names: Originally thought that life began </span><strong><span>after</span></strong><span> the precambrian.</span></p><ol start='' ><li><p><strong><span>Precambrian</span></strong><span>: Cambria = Roman name for Wales</span></p></li><li><p><strong><span>Phanerozoic</span></strong><span> = Life</span></p><ol start='' ><li><strong><span>Paleozoic</span></strong><span>: Visible life</span></li><li><strong><span>Mesozoic</span></strong><span>: Middle life</span></li><li><strong><span>Cenozoic</span></strong><span>: Recent life</span></li></ol></li></ol><hr /><h3 id='precambrian-eon'><span>Precambrian EON</span></h3><ol start='' ><li><p><span>4.57 Bya: Solar system formation</span></p><ol start='' ><li><span>Bacteria</span></li><li><span>Archea</span></li><li><span>Eukarya</span></li></ol></li></ol><h3 id='phanerozic-eon'><span>Phanerozic EON</span></h3><h4 id='1-paleozoic-era'><span>1. Paleozoic ERA</span></h4><ol start='' ><li><span>Cambrian (542 Mya)</span></li><li><span>Ordovician (490 Mya)</span></li><li><span>Silurian (443 Mya)</span></li><li><span>Devonian (416 Mya)</span></li><li><span>Carboniferous (359 Mya)</span></li><li><span>Permian (299 Mya)</span></li></ol><h4 id='2-mesozoic-era-reptiles'><span>2. Mesozoic ERA (Reptiles)</span></h4><ol start='' ><li><span>Triassic (250 Mya)</span></li></ol><ol start='2' ><li><p><span>Jurassic (200 Mya)</span></p></li><li><p><span>Cretaceous (145 Mya)</span></p><ul><li><p><span>Reptiles dominate land, air, and sea</span></p></li><li><p><span>Sea levels rise</span></p></li><li><p><span>Extinction</span></p><ul><li><span>Asteroid in Yucatan Mexico (K-T boundary) </span></li><li><span>Volcanoes in India (Deccan Traps)</span></li></ul></li></ul></li></ol><h4 id='3-cenozoic-era-mammals'><span>3. Cenozoic ERA (Mammals)</span></h4><p><span>General trend is that the Earth is </span><strong><span>COOLING</span></strong></p><ol start='' ><li><p><span>Paleogene</span></p><ol start='' ><li><p><span>Paleocene (65 Mya)</span></p><ul><li><span>Small animals and birds</span></li><li><span>India collides with Asia</span></li></ul></li><li><p><span>Eocene (55 Mya)</span></p><ul><li><span>Herbivores feed on leaves and herbs, no grass yet</span></li><li><span>Carnivores: dog, weasel, bear and cat families</span></li></ul></li><li><p><span>Oligocene (34 Mya)</span></p><ul><li><span>Global cooling: Forests shrink, grasslands expand</span></li><li><span>First </span><strong><span>Anthropoidea</span></strong><span> (humans, monkeys, apes)</span></li></ul></li></ol></li><li><p><span>Neogene</span></p><ol start='' ><li><p><span>Miocene (23 Mya) - </span><a href='https://www.youtube.com/watch?v=HooZ84rpovQ&amp;t=290s'><span>PBS Eons</span></a></p><ul><li><p><span>Begin with short period of global warming</span></p></li><li><p><span>Grasslands across Northern Hemisphere</span></p></li><li><p><span>Messinian Salinity Crisis (6.2 - 5.6 Mya) (aka MSC)</span></p><p><span>Repeating erosion events &amp; Milankovitch climate cycles cause the Mediterranean Sea to dry up. The sea then refills quickly during the </span><strong><span>Zanchlean Flood</span></strong><span>.</span></p></li></ul></li><li><p><span>Pliocene (5 Mya)</span></p><ul><li><p><span>Bridge forms between North and South America</span></p><ul><li><span>North: Sloths, armadillos, marsupials</span></li><li><span>South: Cats, dogs</span></li></ul></li><li><p><span>First hominids in Africa</span></p><ul><li><strong><span>Lucy - Australopithecus afarensis - 3.7 Mya</span></strong></li></ul></li></ul></li><li><p><span>Pleistocene (2 Mya)</span></p><ul><li><span>20 cycles of glaciations</span></li><li><span>Modern humans</span></li></ul></li><li><p><span>Holocene (11.5 Kya)</span></p></li></ol></li></ol><p>&nbsp;</p><p>&nbsp;</p><h1 id='homo-sapiens'><span>Homo Sapiens</span></h1><p><span>Post Civilization</span></p><ul><li><a href='https://www.youtube.com/watch?v=-6Wu0Q7x5D0&amp;t=46s'><span>Video of Political Population Spread</span></a></li><li><a href='https://i.redd.it/6lbringa04321.jpg'><span>Lascelles</span></a></li><li><a href='https://www.khanacademy.org/humanities/world-history'><span>Khan Academy World History</span></a></li><li><a href='https://www.davidrumsey.com/luna/servlet/workspace/handleMediaPlayer?qvq=q%253APub_List_No%253D%25221810.000%2522%253Blc%253ARUMSEY%257E8%257E1&amp;trs=2&amp;mi=1&amp;lunaMediaId=RUMSEY~8~1~200375~3001080'><span>Histomap - Ethnicities</span></a></li></ul><p><a href='https://www.wikiwand.com/en/List_of_human_evolution_fossils'><span>Wikipedia Human Evolution Fossils</span></a></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='ancient-history'><span>Ancient History</span></h2><ul><li><p><a href='https://youtu.be/d2lJUOv0hLA'><span>Sumerian Doc</span></a></p></li><li><p><a href='https://www.dancarlin.com/hardcore-history-56-kings-of-kings/'><span>Dan Carlin King of Kings</span></a></p></li><li><p><a href='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Semitic_languages.svg/640px-Semitic_languages.svg.png?1628278519150'><span>Map of Semitic languages</span></a></p></li><li><p><a href='https://www.dailymotion.com/embed/video/x2p4mlt?autoplay=1'><span>Map Video of Persia 8000BC to 2000BC</span></a></p><ul><li><p><span>Mesopotamia --&gt; Elamites --&gt; Assyria --&gt; Achaemenid </span></p><p><span>--&gt; Seleucid --&gt; Parthian --&gt; Sasanians --&gt; Islam </span></p><p><span>--&gt; Umayyad --&gt; Abbadsid --&gt; Seljuqs --&gt; Mongol </span></p><p><span>--&gt; Illkhanid --&gt; Timurid --&gt; Safavids --&gt; Iran</span></p></li></ul></li></ul><h3 id='5400-bc'><span>5400 BC</span></h3><p><img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/sites/27408/images/t8n4tDpTOmT6LOUyKYAz_pasted_image_0_19.png" style="zoom:33%;" /></p><ul><li><p><span>Akkadians (North): Semitic-speaking people, same as Hebrew and Arabic</span></p></li><li><p><span>Elamites: Persians of today</span></p></li><li><p><span>Sumerians (South): Language-isolate, possibly arriving from India. Name means &quot;Black Headed Ones&quot;.</span></p><p><span>5400BC:  First city (Eridu) is founded where the god Anki decided the king should rule.</span></p></li></ul><p><span>Noah --&gt; Ham --&gt; Cush --&gt; Nimrod --&gt;</span></p><ul><li><span>Babel , Erech (Uruk), Accad, Calneh</span></li></ul><p><span>2500 BC: Lagash (slaving city) takes over tons are area. Over time groups rebel.</span></p><p><span>2334 BC: Akkadian people (led by Sargon) take over.</span></p><h3 id='2213-bc-greek'><span>2213 BC greek</span></h3><p><span>Hale-Bopp Comet, 4.2 kiloyear event</span></p><ul><li><span>Changes ice in North Atlantic</span></li><li><span>Egypt Old Kingdom</span></li><li><span>Indus Valley</span></li><li><span>Lanzhou in China</span></li></ul><p><span>Gutaean people, the curse of Akkad (possibly connected to the Kurds of today)</span></p><p><span>Martu people (Amorites)</span></p><ul><li><p><span>North = Assyrians</span></p><ul><li><span>Greeks thought of Persians are barbaric. Compared to the Assyrians, Persians were seen as tolerant by other people from the east</span></li></ul></li><li><p><span>West = Greece</span></p><ul><li><span>Spartans = Lacedaemonians</span></li></ul></li><li><p><span>East = Persia = Iran</span></p><ul><li><span>Achaemenid Persian = First Persian Empire = King Xerxes</span></li><li><span>Old Testament looks at them as &quot;divine&quot;</span></li></ul></li></ul><h3 id='1200-bc'><span>1200 BC</span></h3><p><span>Egyptian Pharaoh Merneptah (pg 53)</span></p><p><span>Book of Judges: 1200-1050 BCE (pg 52)</span></p><p><span>Bronze Age Collapse: </span><a href='https://classconnection.s3.amazonaws.com/66342/flashcards/683693/gif/gar05-01greekworld-1.gif'><span>Image before Bronze Age Collape</span></a></p><p><span>800-500 BC: Archaic Greece (pg 27)</span></p><ul><li><p><span>Started out being ruled by nobleman</span></p></li><li><p><span>Unpaid debts --&gt; slavery</span></p></li><li><p><span>Population rise --&gt; strains resources --&gt; expand to France</span></p></li><li><p><span>Polis = Each city + surrounding area + collective mind + politics</span></p></li><li><p><span>Ekklesia</span></p><ul><li><span>Greek speaking Jews --&gt; Israel</span></li><li><span>Greek New Testament --&gt; Church</span></li></ul></li></ul><p><span>700 BCE: Homer</span></p><ul><li><span>Stories refer to the Mycenaen people from before the collapse.</span></li><li><span>The </span><em><span>Iliad</span></em><span> and </span><em><span>Odyssey</span></em><span> refer to the 10 year journey home after they have destroyed the city of Troy.</span></li><li><span>Creates a positive shared identity for Greeks, also leads to viewing non-Greeks of speaking &quot;ba-ba&quot; baby nonsense. Troy was seen as basically the same people as the Greeks. Persians (Iran) and Egypt were thought of highly.</span></li><li><span>Poet Hesiod later creates </span><em><span>Theogony</span></em><span>: Struggle between following greek gods &amp; also making sense of the world </span></li></ul><p><span>612 BCE: Medes, Babylonians, and Scythians together take over Nineveh (Assyrian most fortified city)</span></p><p><span>585 BCE: Solar eclipse, Medes and Lydians stop fighting</span></p><p><span>530&#39;s BCE: Cyrus (Persian) tolerant leader</span></p><p><span>499 bce - 450bce (roughly) - Athens vs Persians (during life of Socrates )</span></p><ul><li><span>Athens go to war with Persian Empire and win</span></li><li><span>Hereodotos writes a book about it - gave the entire truth, not just the parts that could be shared with children to learn about morals</span></li></ul><p><span>480 BCE Thermapole: 300 Spartans vs the Persians (&quot;a million men&quot;)</span></p><p><span>469 - 399 bce - Socrates</span></p><p><span>431 - 404bce - &quot;Pelpopennesian War&quot;</span></p><ul><li><span>After Athens beat the Persians, they had a ton of self confidence &amp; wealth and decided to take over a league of Greek city-states. This made the Spartans jealous so Spartans attacked and won</span></li><li><span>Thucydides (an Athens general) writes about how the collective corruption of their own society had led to their downfall</span></li></ul><p><span>428 - 348 bce - Plato</span></p><ul><li><span>Forms</span></li><li><span>Ethics - God should be ethical, not like the pantheon of Greek gods</span></li></ul><p><span>384 - 322 bce - Aristotle</span></p><ul><li><span>Plato was more of an &quot;idealist&quot;, Aristotle would look of the data of what actually happens. </span></li></ul><p><span>340bce </span></p><ul><li><p><span>(Macedonian) Alexander the Great&#39;s dad takes over Greece</span></p></li><li><p><span>Alexander the Great takes over from his father</span></p></li><li><p><span>Combination of Greek and Macedonian take over tons of area to the east and set up local imitations of Greek culture</span></p></li><li><p><span>Leaders abandoned democracy, became dictators / monarchs</span></p></li><li><p><span>Philosophy wasn&#39;t able to influence leaders anymore, so it became more of an &quot;inward&quot; reflection</span></p><ul><li><span>Label of Cynic from memory of Diogenes</span></li><li><span>Pyrrhon - its best to keep from making any judgements at all</span></li><li><span>Epicurus - Life&#39;s ultimate goal is the pursuit of happiness</span></li><li><span>Zeno - taught Stoics to conquer their passions, don&#39;t let life get you down</span></li></ul></li></ul><h3 id='231-bc'><span>231 BC</span></h3><p><a href='https://www.youtube.com/watch?v=v5q1rerf-qw'><span>Kings and Generals: Greeks vs Romans</span></a></p><p><img src="https://i.imgur.com/AUkHSei.jpg" style="zoom:47%;" /></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h3 id='1000---100-bc-israel'><span>1000 - 100 BC Israel</span></h3><p><span>Ch 2 - A People and Their Land</span></p><p><span>Children of Israel = Hebrews = &quot;Habiru&quot;</span></p><p><span>Patriarchs: Starts with Abraham around 1800 BC</span></p><p><span>Israel (Canaan)</span></p><ul><li><span>Connects Egypt to Iraq (Abraham came from Ur which is in Iraq)</span></li><li><span>Jews = Judah = Judaea = &quot;Promised&quot; Land</span></li><li><span>Christians --&gt; Jesus born here = &quot;Holy&quot; Land</span></li><li><span>Abraham --&gt; Isaac --&gt; Jacob. Jacob ends up wrestling with someone who renames Jacob as &quot;Israel&quot;</span></li></ul><p><span>8th and 7th BCE prophets such as Jeremiah, Hosea, Isaiah do not include stories of Israel / the Patriarchs. These stories do not begin until the 6th century. This implies the Patriarchs might post-date the 7th century BCE.</span></p><p><span>Bible marks the great flood at 2348 BC (4.2 kiloyear event). If we shift 1200 years, we arrive near 1200 BC (Bronze Age collapse)</span></p><p><span>Pentateuch = first five books = &#39;five scrolls&#39;</span></p><p><span>Exodus occurs in ..?</span></p><p><span>Book of Judges occurs 1200-1050 BCE. Philistines = Palestine </span></p><hr /><h3 id='4-bc-to-451'><span>4 BC to 451</span></h3><p><span>73-4 BCE King Herod</span></p><p><span>Matthew &amp; Luke say Jesus was born in Bethlehem (Judea) (Prophet Micah said He would be born here). The other 3 gospels refer to Jesus as coming from Nazareth (Galilee). Luke&#39;s ancestor list of Jesus is men, but Matthew&#39;s are non-Jewish women with the exception of Mary.</span></p><p><span>Isaiah&#39;s prophecy said that the Messiah would be born of a &quot;young women&quot;, not specifically a virgin. This was translated into the Greek word for virgin (</span><em><span>parthenos</span></em><span>).</span></p><p><span>left off at pg 85</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h1 id='united-states'><span>United States</span></h1><p><a href='https://www.bbc.com/news/world-us-canada-16759233'><span>BBC</span></a></p><p><span>1492 - Christopher Columbus</span></p><p><span>1607 - Tobacco</span></p><p><span>1774 - War of Independence begins</span></p><p><span>1783 - War of Independence ends (Treaty of Paris)</span></p><p><span>1787 - Constitution</span></p><p><span>1789 - George Washington</span></p><hr /><p><span>1800&#39;s - &quot;Manifest destiny&quot;, land stolen from Native Americans</span></p><p><span>1803 - Louisiana Purchase</span></p><p><span>1808 - Atlantic slave trade abolished</span></p><p><span>1812 - War of 1812 vs British (during Napleonic wars)</span></p><p><span>1846-49 - Aqusition of California and New Mexico</span></p><p><span>1854 - Republican Party (anti-slavery)</span></p><p><span>1860 - 11 states secede</span></p><p><span>1863 - Emancipation Proclamation</span></p><p><span>1865 - Slavery abolished</span></p><p><span>1898 - Spanish America War (Puerto Rico, Philippines, Cuba). Also annexes Hawaii</span></p><hr /><p><span>1917 - Intervene in WW1, don&#39;t join League of Nations</span></p><p><span>1920 - Woman can vote</span></p><p><span>1920 - Prohibition</span></p><p><span>1924 - Indigenous people gain right to vote</span></p><p><span>1929 - Stock market crash</span></p><p><span>1933 - FDRs &quot;New Deal&quot;</span></p><p><span>1939 - WW2 begins</span></p><p><span>1941 - Pearl Harbor attacked</span></p><p><span>1945 - Hiroshima and Nagasaki</span></p><p><span>1947 - Cold war begins - Truman pledges aid against soviets</span></p><p><span>1950-53 - Korean War (vs North Korea and China)</span></p><p><span>1954 - Racial segregation in schools outlawed</span></p><p><strong><span>1960 - JFK</span></strong></p><p><span>1962 - Cuban Missile Crisis</span></p><p><span>1968 - MLK assassinated</span></p><p><span>1969 - Neil Armstrong on the moon</span></p><p><span>1973 - Vietnam ceasefire</span></p><p><span>1986 - US bombs Libya - &quot;Irangate&quot;</span></p><p><strong><span>1988 - Bush</span></strong></p><p><span>1991 - Iraq invades Kuwait, US gets them out</span></p><p><strong><span>1992 - Clinton</span></strong></p><p><span>1992 - NAFTA</span></p><p><strong><span>2000 - George W Bush</span></strong></p><p><span>2001 - 9/11</span></p><p><span>2001 - Airstrikes vs Afghanistan</span></p><p><span>2002 - Department of Homeland Security</span></p><p><span>2003 - Missiles vs Iraq (Saddam Hussein)</span></p><p><span>2006 - Partriot Act</span></p><p><span>2008 - Lehman Brothers</span></p><p><strong><span>2008 - Obama</span></strong></p><p><span>2010 - Nuclear arms reduction</span></p><p><span>2011 - Osama Bin Laden killed</span></p><p><span>2012 - US ambassador in Libya killed</span></p><p><span>2013 - Boston Bombing (Soviet born, Islamic extremist)</span></p><p><span>2013 - Snowden flees to Russia</span></p><p><strong><span>2016 - Trump</span></strong></p><p><span>2019 - US withdraws from northern Syria, Turkey moves in to occupy Kurdish parts to create buffer between Syria and Turkey</span></p><p><span>2020 - Drone strikes in Iran killing one of their commanders</span></p><p><strong><span>2020 - Biden</span></strong></p><hr /><p>&nbsp;</p><p><span> </span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+
+<script>(function (){var t=document.body.parentElement,e=[],n=null,i=document.body.classList.contains("typora-export-collapse-outline"),r=function(t,e,n){document.addEventListener(t,function(t){if(!t.defaultPrevented)for(var i=t.target;i&&i!=this;i=i.parentNode)if(i.matches(e)){!1===n.call(i,t)&&(t.preventDefault(),t.stopPropagation());break}},!1)};function o(){return t.scrollTop}r("click",".outline-expander",function(t){var e=this.closest(".outline-item-wrapper").classList;return e.contains("outline-item-open")?e.remove("outline-item-open"):e.add("outline-item-open"),c(),!1}),r("click",".outline-item",function(t){var e=this.querySelector(".outline-label");if(location.hash="#"+e.getAttribute("href"),i){var n=this.closest(".outline-item-wrapper").classList;n.contains("outline-item-open")||n.add("outline-item-open"),l(),n.add("outline-item-active")}});var a,s,u=function(){var t=o();n=null;for(var i=0;i<e.length&&e[i][1]-t<60;i++)n=e[i]},l=function(){document.querySelectorAll(".outline-item-active").forEach(t=>t.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(t=>t.classList.remove("outline-item-open"))},c=function(){if(n){l();var t=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(n[0]):n[0])+'"]');if(t)if(i){var e=t.closest(".outline-item-open>ul>.outline-item-wrapper");if(e)e.classList.add("outline-item-active");else{for(var r=(t=t.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");r;)r=(t=r).parentElement.closest(".outline-item-wrapper");t.classList.add("outline-item-active")}}else t.closest(".outline-item-wrapper").classList.add("outline-item-active")}};window.addEventListener("scroll",function(t){a&&clearTimeout(a),a=setTimeout(function(){u(),c()},300)});var f=function(){s=setTimeout(function(){!function(){e=[];var t=o();document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(n=>{var i=n.getAttribute("id");e.push([i,t+n.getBoundingClientRect().y])})}(),u(),c()},300)};window.addEventListener("resize",function(t){s&&clearTimeout(s),f()}),f()})();</script></body>
+</html>
